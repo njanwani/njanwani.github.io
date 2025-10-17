@@ -9,19 +9,22 @@ redirect_from:
 ---
 Welcome!
 ======
-I am a first-year doctoral student at Georgia Tech ([IRIM](https://research.gatech.edu/robotics)) 
+I am a second-year PhD student at Georgia Tech ([IRIM](https://research.gatech.edu/robotics)) 
 in the [Dynamic Mobility Lab](https://dynamicmobility.github.io/), supported by
-the IRIM and NSF fellowships and advised by Prof. [Maegan Tucker](https://maegantucker.com/). Broadly, I want to develop human-robot teams that 
-can think, act, and recover in real-world dynamic enviornments. To this end, I draw
-upon methods in ML/AI, control theory, and classical robotics. Please browse my
-[publications](https://njanwani.github.io/publications/) and [portfolio](https://njanwani.github.io/portfolio/)
-pages for more information on my work in exoskeletons, assistive/autonomous driving, 
-arms, and more!
+the IRIM and NSF fellowships and advised by Prof. [Maegan Tucker](https://maegantucker.com/).
+Broadly, I want to develop planning and control for legged robots that can be easily and efficiently shaped by human feedback.
+Currently, I am focusing upon the below research threads
+1. Learning robust and tuneable bipedal locomotion and behavior; fusing imitation learning with model-based control
+2. Constructing multi-objective algorithms for preference learning, solving for pareto-optimal policy families  
+3. Some minor threads, including socially expressive humanoid controllers and VLM-based task planners
+
+For these projects, I am generally working within reinforcement learning, imitation learning, preference optimization, and control theory.
+Please browse my [publications](https://njanwani.github.io/publications/) and [portfolio](https://njanwani.github.io/portfolio/)
+pages for more information on my work in bipedal locomotion, exoskeletons, assistive/autonomous driving, manipulation, and more!
 
 Previously, I completed my B.S. in Computer Science at Caltech, working with Prof.
 Joel Burdick and Prof. Aaron Ames on assistive robotics and intention-aware
-safety-critical control. In my free time, I like to ski, make music, and build
-RC vehicles.
+safety-critical control. In my free time, I like to ski and make music.
 
 <!-- My past work
 ====== -->
