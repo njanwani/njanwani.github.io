@@ -21,14 +21,17 @@ layout: single
   }
   
   .row {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    display: flex;
+    justify-content: center;
     gap: 5px;
+    flex-wrap: nowrap;
   }
   
   .tile {
     width: var(--tile-size, 62px);
     height: var(--tile-size, 62px);
+    min-width: var(--tile-size, 62px);
+    max-width: var(--tile-size, 62px);
     border: 2px solid #d3d6da;
     display: flex;
     justify-content: center;
@@ -37,6 +40,7 @@ layout: single
     font-weight: bold;
     text-transform: uppercase;
     color: #000;
+    flex-shrink: 0;
   }
   
   .tile.filled {
@@ -131,23 +135,55 @@ layout: single
   .reset-btn:hover {
     opacity: 0.9;
   }
+  
+  .give-up-btn {
+    display: block;
+    margin: 10px auto;
+    padding: 10px 20px;
+    background-color: #787c7e;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .give-up-btn:hover {
+    opacity: 0.9;
+  }
 </style>
 
 <div class="wordle-container">
   <div class="message" id="message"></div>
   <div class="game-board" id="board"></div>
   <div class="keyboard" id="keyboard"></div>
+  <button class="give-up-btn" id="give-up-btn">I give up</button>
   <button class="reset-btn" id="reset-btn" style="display: none;">Play Again</button>
 </div>
 
 <script>
   const WORDS = [
-    'ELEPHANT', 'COMPUTER', 'MOUNTAIN', 'KEYBOARD', 'UNIVERSE',
-    'CAT', 'DOG', 'BAT', 'SUN', 'SKY', 'BED',
-    'SCIENCE', 'PICTURE', 'TEACHER'
+    { word: 'YELLOWSTONE',     link: 'https://www.icloud.com/photos/#/sa,DC376C85-CF48-439D-B0CB-F1B007CA7B87' },
+    { word: 'CUPERTINO',       link: 'https://www.icloud.com/photos/#/sa,6AA77C30-6EA8-4BC4-AC25-BB53D1E03935/' },
+    { word: 'MIDLAND',         link: 'PLACEHOLDER_LINK_3' },
+    { word: 'SANFRANCISCO',    link: 'PLACEHOLDER_LINK_4' },
+    { word: 'ATLANTA',         link: 'PLACEHOLDER_LINK_5' },
+    { word: 'JAMAICA',         link: 'PLACEHOLDER_LINK_6' },
+    { word: 'HAKONE',          link: 'PLACEHOLDER_LINK_7' },
+    { word: 'KYOTO',           link: 'PLACEHOLDER_LINK_8' },
+    { word: 'TOKYO',           link: 'PLACEHOLDER_LINK_9' },
+    { word: 'OSAKA',           link: 'PLACEHOLDER_LINK_10' },
+    { word: 'TETON',           link: 'PLACEHOLDER_LINK_11' },
+    { word: 'LA',              link: 'PLACEHOLDER_LINK_12' },
+    { word: 'PASADENA',        link: 'PLACEHOLDER_LINK_13' },
+    { word: 'RANCHOCUCAMONGA', link: 'https://www.icloud.com/photos/#/sa,89C4D069-591F-4766-B640-5C7BF0757D05/' },
+    { word: 'DETROIT',         link: 'PLACEHOLDER_LINK_15' },
+    { word: 'COCOCAY',         link: 'PLACEHOLDER_LINK_16' }
   ];
   
   let targetWord = '';
+  let targetLink = '';
   let currentRow = 0;
   let currentTile = 0;
   let gameOver = false;
@@ -159,6 +195,7 @@ layout: single
   const keyboard = document.getElementById('keyboard');
   const message = document.getElementById('message');
   const resetBtn = document.getElementById('reset-btn');
+  const giveUpBtn = document.getElementById('give-up-btn');
   
   const keyboardLayout = [
     ['Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P'],
@@ -167,7 +204,9 @@ layout: single
   ];
   
   function initGame() {
-    targetWord = WORDS[Math.floor(Math.random() * WORDS.length)];
+    const selected = WORDS[Math.floor(Math.random() * WORDS.length)];
+    targetWord = selected.word;
+    targetLink = selected.link;
     wordLength = targetWord.length;
     maxGuesses = wordLength - 1;
     currentRow = 0;
@@ -176,23 +215,30 @@ layout: single
     keyboardState = {};
     message.textContent = '';
     resetBtn.style.display = 'none';
+    giveUpBtn.style.display = 'block';
     
     // Calculate tile size and container width based on word length
     const gap = 5;
-    let tileSize, containerWidth;
+    let tileSize;
     
+    // More aggressive scaling for longer words
     if (wordLength <= 5) {
       tileSize = 62;
-      containerWidth = 500;
-    } else if (wordLength <= 7) {
+    } else if (wordLength === 6) {
       tileSize = 55;
-      containerWidth = wordLength * tileSize + (wordLength - 1) * gap + 40;
+    } else if (wordLength === 7) {
+      tileSize = 48;
+    } else if (wordLength === 8) {
+      tileSize = 42;
     } else {
-      tileSize = Math.max(40, Math.floor(650 / wordLength));
-      containerWidth = wordLength * tileSize + (wordLength - 1) * gap + 40;
+      tileSize = Math.max(35, Math.floor(380 / wordLength));
     }
     
-    const fontSize = Math.max(20, Math.floor(tileSize * 0.52));
+    // Calculate exact container width needed
+    const boardWidth = wordLength * tileSize + (wordLength - 1) * gap;
+    const containerWidth = Math.max(500, boardWidth + 80);
+    
+    const fontSize = Math.max(18, Math.floor(tileSize * 0.52));
     
     // Set CSS variables
     document.documentElement.style.setProperty('--tile-size', `${tileSize}px`);
@@ -313,6 +359,7 @@ layout: single
       message.textContent = '🎉 You won!';
       gameOver = true;
       resetBtn.style.display = 'block';
+      giveUpBtn.style.display = 'none';
       return;
     }
     
@@ -322,9 +369,10 @@ layout: single
     
     // Check lose condition
     if (currentRow === maxGuesses) {
-      message.textContent = `Game over! The word was ${targetWord}`;
+      message.innerHTML = `Game over! The word was <a href="${targetLink}" target="_blank" style="color: #6aaa64; text-decoration: underline;">${targetWord}</a>`;
       gameOver = true;
       resetBtn.style.display = 'block';
+      giveUpBtn.style.display = 'none';
     }
   }
   
@@ -351,6 +399,15 @@ layout: single
   });
   
   resetBtn.addEventListener('click', initGame);
+  
+  giveUpBtn.addEventListener('click', () => {
+    if (!gameOver) {
+      message.innerHTML = `The word was <a href="${targetLink}" target="_blank" style="color: #6aaa64; text-decoration: underline;">${targetWord}</a>`;
+      gameOver = true;
+      resetBtn.style.display = 'block';
+      giveUpBtn.style.display = 'none';
+    }
+  });
   
   // Initialize game on load
   initGame();
