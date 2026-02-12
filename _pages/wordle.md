@@ -5,6 +5,7 @@ author_profile: false
 layout: single
 ---
 
+{% raw %}
 <style>
   .wordle-container {
     margin: 0 auto;
@@ -412,3 +413,4 @@ layout: single
   // Initialize game on load
   initGame();
 </script>
+{% endraw %}
