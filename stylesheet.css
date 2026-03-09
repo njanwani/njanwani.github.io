@@ -149,37 +149,37 @@ span.highlight {
   tr,
   p,
   a {
-    font-size: 12px;
+    font-size: 10px;
   }
 
   strong {
-    font-size: 12px;
+    font-size: 10px;
   }
 
   h2 {
-    font-size: 18px;
+    font-size: 15px;
   }
 
   .papertitle {
-    font-size: 12px;
+    font-size: 10px;
   }
 
   .name {
-    padding-top: 15px;
-    font-size: 24px;
+    padding-top: 14px;
+    font-size: 22px;
   }
 
   .one {
-    width: 120px;
-    height: 120px;
+    width: 112px;
+    height: 112px;
   }
 
   .two {
-    width: 120px;
-    height: 120px;
+    width: 112px;
+    height: 112px;
   }
 
   .colored-box {
-    padding: 15px;
+    padding: 14px;
   }
 }
