@@ -1,53 +1,152 @@
-<!DOCTYPE HTML>
-<html lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
 
-    <title>Neil Janwani</title>
+<head>
+  <meta name=viewport content="width=800">
+  <meta name="generator" content="HTML Tidy for Linux/x86 (vers 11 February 2007), see www.w3.org">
+  <style type="text/css">
+    /* Color scheme inspired by academic portfolios */
 
-    <meta name="author" content="Neil Janwani">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" href="images/favicon/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" type="text/css" href="stylesheet.css">
-    
-  </head>
+    a {
+      color: #1772d0;
+      text-decoration: none;
+    }
 
-  <body>
-    <table style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-      <tr style="padding:0px">
-        <td style="padding:0px">
+    a:focus,
+    a:hover {
+      color: #f09228;
+      text-decoration: none;
+    }
 
-          <!-- Introduction -->
-          <div id="intro"></div>
+    body,
+    td,
+    th,
+    tr,
+    p {
+      font-family: 'Lato', Verdana, Helvetica, sans-serif;
+      font-size: 15px
+    }
 
-          <!-- Papers -->
-          <div id="papers"></div>
+    abs {
+      font-family: 'Lato';
+      font-style: italic;
+      font-size: 14px
+    }
 
-          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-            <tr>
-              <td style="padding:0px">
-                <br>
-                <p style="text-align:right;font-size:small;">
-                  Website design courtesy of <a href="https://github.com/jonbarron/jonbarron_website">Jon Barron</a>.
-                </p>
-              </td>
-            </tr>
-          </tbody></table>
+    a {
+      font-family: 'Lato', Verdana, Helvetica, sans-serif;
+      font-size: 15px
+    }
+
+    strong {
+      font-family: 'Lato', Verdana, Helvetica, sans-serif;
+      font-size: 15px;
+    }
+
+    heading {
+      font-family: 'Lato', Verdana, Helvetica, sans-serif;
+      font-size: 22px;
+    }
+
+    papertitle {
+      font-family: 'Lato', Verdana, Helvetica, sans-serif;
+      font-size: 18px;
+      font-weight: 700
+    }
+
+    name {
+      font-family: 'Lato';
+      font-size: 40px;
+    }
+
+    .one {
+      width: 160px;
+      height: 160px;
+      position: relative;
+    }
+
+    .two {
+      width: 160px;
+      height: 160px;
+      position: absolute;
+      transition: opacity .2s ease-in-out;
+      -moz-transition: opacity .2s ease-in-out;
+      -webkit-transition: opacity .2s ease-in-out;
+    }
+
+    .fade {
+      transition: opacity .2s ease-in-out;
+      -moz-transition: opacity .2s ease-in-out;
+      -webkit-transition: opacity .2s ease-in-out;
+    }
+
+    span.highlight {
+      background-color: #ffffd0;
+    }
+
+  </style>
+  <script type="text/javascript" src="js/hidebib.js"></script>
+  <title>Neil Janwani</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link rel="shortcut icon" href="images/favicon/favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+
+  <table width="800" border="0" align="center" cellspacing="0" cellpadding="0">
+    <tr>
+      <td>
+        <!-- Introduction Section -->
+        <div id="intro"></div>
+
+        <!-- Papers Section -->
+        <div id="papers"></div>
+
+        <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
+          <tr>
+            <td>
+              <br>
+              <p align="right">
+                <font size="2">
+                  Website design courtesy of <a href="https://jonbarron.info/"><strong>Jon Barron</strong></a>
+                </font>
+              </p>
+            </td>
+          </tr>
+        </table>
+
         </td>
-      </tr>
-    </table>
+    </tr>
+  </table>
 
-    <script>
-      function loadSection(file, elementId) {
-        fetch(file)
-          .then(response => response.text())
-          .then(html => {
-            document.getElementById(elementId).innerHTML = html;
-          });
-      }
+  <script xml:space="preserve" language="JavaScript">
+    function toggleblock(id) {
+      var element = document.getElementById(id);
+      if (element.style.display == 'none')
+        element.style.display = 'block';
+      else
+        element.style.display = 'none';
+    }
 
-      loadSection('sections/intro.html', 'intro');
-      loadSection('sections/papers.html', 'papers');
-    </script>
-  </body>
+    function hideallabs() {
+      var elements = document.getElementsByTagName('abs');
+      for (var i = 0; i < elements.length; i++)
+        elements[i].style.display = 'none';
+    }
+
+    function loadSection(file, elementId) {
+      fetch(file)
+        .then(response => response.text())
+        .then(html => {
+          document.getElementById(elementId).innerHTML = html;
+          hideallabs();
+        });
+    }
+
+    loadSection('sections/intro.html', 'intro');
+    loadSection('sections/papers.html', 'papers');
+  </script>
+</body>
+
 </html>
