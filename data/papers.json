@@ -1,18 +1,34 @@
 [
     {
+    "id": "moplayground",
+    "title": "MO-Playground: Massively Parallelized Multi-Objective Reinforcement Learning for Robotics",
+    "authors": [
+      {"name": "Neil Janwani", "highlight": true, "superscript": "*"},
+      {"name": "Ellen Novoseller"},
+      {"name": "Vernon Lawhern"},
+      {"name": "Maegan Tucker"}
+    ],
+    "venue": "Preprint",
+    "year": 2026,
+    "arxivUrl": "https://arxiv.org/abs/2510.11542",
+    "thumbnail": "images/papers/moplayground.gif",
+    "thumbnailAlt": "Bruce Robot Walking with NaviGait",
+    "abstract": "Multi-objective reinforcement learning (MORL) is a powerful tool to learn Pareto-optimal policy families across conflicting objectives. However, unlike traditional RL algorithms, existing MORL algorithms do not effectively leverage large-scale parallelization to concurrently simulate thousands of environments, resulting in vastly increased computation time. Ultimately, this has limited MORL's application towards complex multi-objective robotics problems. To address these challenges, we present 1) MORLAX, a new GPU-native, fast MORL algorithm, and 2)  MO-Playground, a pip-installable playground of GPU-accelerated multi-objective environments. Together, MORLAX~and  MO-Playground~approximate Pareto sets within minutes, offering 25-270x speed-ups compared to legacy CPU-based approaches whilst achieving superior Pareto front hypervolumes. We demonstrate the versatility of our approach by implementing a custom BRUCE humanoid robot environment using  MO-Playground~and learning Pareto-optimal locomotion policies across 6 realistic objectives for BRUCE, such as smoothness, efficiency and arm swinging."
+  },
+    {
     "id": "navigait",
-    "title": "NAVIGAIT: Navigating Dynamically Feasible Gait Libraries using Deep Reinforcement Learning",
+    "title": "NaviGait: Navigating Dynamically Feasible Gait Libraries using Deep Reinforcement Learning",
     "authors": [
       {"name": "Neil Janwani", "highlight": true, "superscript": "*"},
       {"name": "Varun Madabushi", "superscript": "*"},
       {"name": "Maegan Tucker"}
     ],
-    "venue": "IEEE International Conference on Robotics and Automation (ICRA)",
+    "venue": "ICRA",
     "year": 2026,
     "arxivUrl": "https://arxiv.org/abs/2510.11542",
-    "thumbnail": "images/papers/icra2024-bcbf-intention.gif",
+    "thumbnail": "images/papers/navigait.gif",
     "thumbnailAlt": "Bruce Robot Walking with NaviGait",
-    "abstract": "We estimate operator intention with an LSTM-based network to safely select among multiple safety filters—each defined by a different backup strategy—selecting behaviors that better align with operator intent while maintaining safety. We validate the approach through simulations and hardware experiments."
+    "abstract": "In this work, we present NaviGait, a hierarchical framework that combines the structure of trajectory optimization with the adaptability of RL for robust and intuitive locomotion control.  NaviGait leverages RL to synthesize new motions by selecting, minimally morphing, and stabilizing gaits taken from an offline-generated gait library, circumventing the need for human-collected demonstrations. NaviGait results in walking policies that match the reference motion better while maintaining robustness comparable to other locomotion controllers."
   },
   {
     "id": "bcbf_intention",
@@ -25,7 +41,7 @@
       {"name": "Tamas G. Molnar"},
       {"name": "Joel W. Burdick"}
     ],
-    "venue": "IEEE International Conference on Robotics and Automation (ICRA)",
+    "venue": "ICRA",
     "year": 2024,
     "arxivUrl": "https://arxiv.org/abs/2310.05865",
     "thumbnail": "images/papers/icra2024-bcbf-intention.gif",
