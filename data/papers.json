@@ -1,4 +1,19 @@
 [
+    {
+    "id": "navigait",
+    "title": "NAVIGAIT: Navigating Dynamically Feasible Gait Libraries using Deep Reinforcement Learning",
+    "authors": [
+      {"name": "Neil Janwani", "highlight": true, "superscript": "*"},
+      {"name": "Varun Madabushi", "superscript": "*"},
+      {"name": "Maegan Tucker"}
+    ],
+    "venue": "IEEE International Conference on Robotics and Automation (ICRA)",
+    "year": 2026,
+    "arxivUrl": "https://arxiv.org/abs/2510.11542",
+    "thumbnail": "images/papers/icra2024-bcbf-intention.gif",
+    "thumbnailAlt": "Bruce Robot Walking with NaviGait",
+    "abstract": "We estimate operator intention with an LSTM-based network to safely select among multiple safety filters—each defined by a different backup strategy—selecting behaviors that better align with operator intent while maintaining safety. We validate the approach through simulations and hardware experiments."
+  },
   {
     "id": "bcbf_intention",
     "title": "A Learning-Based Framework for Safe Human-Robot Collaboration with Multiple Backup Control Barrier Functions",
@@ -15,21 +30,6 @@
     "arxivUrl": "https://arxiv.org/abs/2310.05865",
     "thumbnail": "images/papers/icra2024-bcbf-intention.gif",
     "thumbnailAlt": "Intention-Aware Safety",
-    "abstract": "We estimate operator intention with an LSTM-based network to safely select among multiple safety filters—each defined by a different backup strategy—selecting behaviors that better align with operator intent while maintaining safety. We validate the approach through simulations and hardware experiments."
-  },
-  {
-    "id": "navigait",
-    "title": "NAVIGAIT: Navigating Dynamically Feasible Gait Libraries using Deep Reinforcement Learning",
-    "authors": [
-      {"name": "Neil Janwani", "highlight": true, "superscript": "*"},
-      {"name": "Varun Madabushi", "superscript": "*"},
-      {"name": "Maegan Tucker"}
-    ],
-    "venue": "IEEE International Conference on Robotics and Automation (ICRA)",
-    "year": 2026,
-    "arxivUrl": "https://arxiv.org/abs/2510.11542",
-    "thumbnail": "images/papers/icra2024-bcbf-intention.gif",
-    "thumbnailAlt": "Bruce Robot Walking with NaviGait",
     "abstract": "We estimate operator intention with an LSTM-based network to safely select among multiple safety filters—each defined by a different backup strategy—selecting behaviors that better align with operator intent while maintaining safety. We validate the approach through simulations and hardware experiments."
   }
 ]

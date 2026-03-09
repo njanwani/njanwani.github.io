@@ -135,12 +135,74 @@
         elements[i].style.display = 'none';
     }
 
+    async function loadPapers() {
+      try {
+        const response = await fetch('data/papers.json');
+        const papers = await response.json();
+        const container = document.getElementById('papers-container');
+
+        if (!container) return;
+        container.innerHTML = '';
+
+        papers.forEach(paper => {
+          const authorsHtml = paper.authors.map(author => {
+            let authorHtml = author.highlight ? `<strong>${author.name}</strong>` : author.name;
+            if (author.superscript) {
+              authorHtml += `<sup>${author.superscript}</sup>`;
+            }
+            return authorHtml;
+          }).join(', ');
+
+          const paperRow = document.createElement('table');
+          paperRow.width = '100%';
+          paperRow.align = 'center';
+          paperRow.border = '0';
+          paperRow.cellSpacing = '0';
+          paperRow.cellPadding = '20';
+
+          paperRow.innerHTML = `
+            <tr>
+              <td width="40%" valign="top" align="center">
+                <img src="${paper.thumbnail}" alt="${paper.thumbnailAlt}" width="300" style="padding-top:0px;padding-bottom:0px;border-radius:15px;border:1px solid black">
+              </td>
+              <td width="60%" valign="top">
+                <p><a href="${paper.arxivUrl}">
+                <papertitle>${paper.title}</papertitle></a><br>
+                ${authorsHtml}<br>
+                <em>${paper.venue}</em>, ${paper.year}
+                <br>
+                </p>
+
+                <div class="paper" id="${paper.id}">
+                    <a href="${paper.arxivUrl}">arXiv</a> |
+                    <a href="javascript:toggleblock('${paper.id}_abs')">abstract</a>
+
+                    <abs align="justify" id="${paper.id}_abs"> ${paper.abstract}</abs>
+
+                </div>
+              </td>
+            </tr>
+          `;
+
+          container.appendChild(paperRow);
+        });
+
+        hideallabs();
+      } catch (error) {
+        console.error('Error loading papers:', error);
+      }
+    }
+
     function loadSection(file, elementId) {
       fetch(file)
         .then(response => response.text())
         .then(html => {
           document.getElementById(elementId).innerHTML = html;
-          hideallabs();
+          if (elementId === 'papers') {
+            loadPapers();
+          } else {
+            hideallabs();
+          }
         });
     }
 
