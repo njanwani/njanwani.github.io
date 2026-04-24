@@ -89,7 +89,7 @@
   <title>Neil Janwani</title>
   <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-  <link rel="shortcut icon" href="images/favicon/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="images/favicon/handshake.png" type="image/png">
 </head>
 
 <body>
@@ -166,7 +166,7 @@
                 <img src="${paper.thumbnail}" alt="${paper.thumbnailAlt}" width="300" style="padding-top:0px;padding-bottom:0px;border-radius:15px;border:1px solid black">
               </td>
               <td width="60%" valign="top">
-                <p><a href="${paper.arxivUrl}">
+                <p><a href="${paper.website || paper.arxivUrl}">
                 <papertitle>${paper.title}</papertitle></a><br>
                 ${authorsHtml}<br>
                 <em>${paper.venue}</em>, ${paper.year}
@@ -175,6 +175,7 @@
 
                 <div class="paper" id="${paper.id}">
                     <a href="${paper.arxivUrl}">arXiv</a> |
+                    ${paper.code ? `<a href="${paper.code}">code</a> | ` : ''}
                     <a href="javascript:toggleblock('${paper.id}_abs')">abstract</a>
 
                     <abs align="justify" id="${paper.id}_abs"> ${paper.abstract}</abs>
