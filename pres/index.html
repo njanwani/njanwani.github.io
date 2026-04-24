@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pres</title>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            background: #fff;
+            overflow: hidden;
+        }
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100vw;
+            height: 100vh;
+            gap: 16px;
+        }
+        .container video {
+            width: auto;
+            background: #fff;
+        }
+        .container video.cropped {
+            height: 85vh;
+            max-width: 65vw;
+        }
+        .container video.vr {
+            height: 60vh;
+            max-width: 30vw;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <video class="cropped" src="../videos/NaviGait_hero_push_cropped.mp4" autoplay loop muted playsinline></video>
+        <video class="vr" src="../videos/hero_push_vr.mp4" autoplay loop muted playsinline></video>
+    </div>
+</body>
+</html>

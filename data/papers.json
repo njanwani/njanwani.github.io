@@ -3,7 +3,7 @@
     "id": "moplayground",
     "title": "MO-Playground: Massively Parallelized Multi-Objective Reinforcement Learning for Robotics",
     "authors": [
-      {"name": "Neil Janwani", "highlight": true, "superscript": "*"},
+      {"name": "Neil Janwani", "highlight": true},
       {"name": "Ellen Novoseller"},
       {"name": "Vernon Lawhern"},
       {"name": "Maegan Tucker"}
