@@ -1,0 +1,139 @@
+[
+  {
+    "id": "social_gestures",
+    "title": "Socially-Reasonable Humanoid Gestures",
+    "authors": [
+      {"name": "Neil Janwani"}
+    ],
+    "venue": "Georgia Tech, CS 7633 Human-Robot Interaction",
+    "year": "2025",
+    "website": "",
+    "thumbnail": "images/projects/social_tamp.png",
+    "thumbnailAlt": "Socially-Reasonable Humanoid Gestures",
+    "abstract": "Collected dataset of human social gestures and retargeted to Unitree G1 humanoid robot. Utilized an LLM as a high-level social task planner to sequence retargeted motions."
+  },
+  {
+    "id": "motion_priors",
+    "title": "Learning Humanoid Motion Priors Online",
+    "authors": [
+      {"name": "Neil Janwani"}
+    ],
+    "venue": "Georgia Tech, CS 7648 Interaction Robot Learning",
+    "year": "2025",
+    "website": "",
+    "thumbnail": "images/projects/dmp_vlm.png",
+    "thumbnailAlt": "Learning Humanoid Motion Priors Online",
+    "abstract": "Leveraged VLMs to generate high-level task plans from natural language goals, and efficiently request one-shot demonstrations when the robot's skill library is insufficient."
+  },
+  {
+    "id": "carrom_arm",
+    "title": "Human-Robot 5-DoF Manipulator",
+    "authors": [
+      {"name": "Neil Janwani"},
+      {"name": "Krishna Pochana"},
+      {"name": "Pat Mucia"},
+      {"name": "Jade Milan"}
+    ],
+    "venue": "Caltech ME 134 Course Project",
+    "year": 2024,
+    "website": "",
+    "thumbnail": "images/projects/carrom_arm.gif",
+    "thumbnailAlt": "Carrom 5-DoF Manipulator",
+    "abstract": "5-DOF manipulator to play Carrom in a dynamic environment with human opponents."
+  },
+  {
+    "id": "exploration_proj",
+    "title": "Exploration-based Planner",
+    "authors": [
+      {"name": "Neil Janwani"},
+      {"name": "Kevin Gauld"}
+    ],
+    "venue": "Caltech ME 235b Course Project",
+    "year": 2024,
+    "website": "",
+    "thumbnail": "images/projects/exploration_plan.gif",
+    "thumbnailAlt": "Exploration-based Planner",
+    "abstract": "Information-based exploration of an unknown space with probabilistic sensors."
+  },
+  {
+    "id": "quadruped_planning",
+    "title": "Hierarchical Quadruped Planner",
+    "authors": [
+      {"name": "Neil Janwani"},
+      {"name": "Ilana Hejna"},
+      {"name": "Krishna Pochana"},
+      {"name": "Shiva Sreeram"}
+    ],
+    "venue": "Caltech ME 133b Course Project",
+    "year": 2023,
+    "website": "",
+    "thumbnail": "images/projects/quadruped_planning.gif",
+    "thumbnailAlt": "Hierarchical Quadruped Planner",
+    "abstract": "Wrote hierarchical A* planner for quadrupedal locomotion on diverse terrains."
+  },
+  {
+    "id": "wikipedia_agent",
+    "title": "Wikipedia Agent",
+    "authors": [
+      {"name": "Neil Janwani"}
+    ],
+    "venue": "Caltech CS 159, Agentic AI",
+    "year": "2025",
+    "website": "",
+    "thumbnail": "images/projects/teallm.png",
+    "thumbnailAlt": "Wikipedia Agent",
+    "abstract": "Sub-agents for retrieval augmented generation. Improved answer accuracy and speed over baselines."
+  },
+  {
+    "id": "ai_diagnostician",
+    "title": "AI Diagnostician",
+    "authors": [
+      {"name": "Neil Janwani"}
+    ],
+    "venue": "",
+    "year": "",
+    "website": "",
+    "thumbnail": "",
+    "thumbnailAlt": "AI Diagnostician",
+    "abstract": "Trained large vision models to predict pathologies from \"CheXpert\" chest X-rays."
+  },
+  {
+    "id": "graph_search",
+    "title": "Graph Search for Replanning",
+    "authors": [
+      {"name": "Neil Janwani"}
+    ],
+    "venue": "Caltech CDS 234a, Adv. Robot Kinematics",
+    "year": "2024",
+    "website": "",
+    "thumbnail": "images/projects/dstar_simple.png",
+    "thumbnailAlt": "Graph Search for Replanning",
+    "abstract": "Compared efficiency of D* from A* and Dijkstra for replanning on large graphs."
+  },
+  {
+    "id": "quadruped_kinematics",
+    "title": "Quadruped Kinematics",
+    "authors": [
+      {"name": "Neil Janwani"}
+    ],
+    "venue": "",
+    "year": "",
+    "website": "",
+    "thumbnail": "",
+    "thumbnailAlt": "Quadruped Kinematics",
+    "abstract": "Wrote forward/inverse kinematics to simulate a quadrupedal robot designed in Solidworks."
+  },
+  {
+    "id": "mobile_robotics",
+    "title": "Mobile Robotics",
+    "authors": [
+      {"name": "Neil Janwani"}
+    ],
+    "venue": "",
+    "year": "",
+    "website": "",
+    "thumbnail": "",
+    "thumbnailAlt": "Mobile Robotics",
+    "abstract": "Implemented localization, obstacle avoidance, and odometry algorithms on hardware."
+  }
+]

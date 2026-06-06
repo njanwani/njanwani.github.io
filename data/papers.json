@@ -8,14 +8,14 @@
       {"name": "Vernon Lawhern"},
       {"name": "Maegan Tucker"}
     ],
-    "venue": "Preprint",
+    "venue": "Robotics and Automation Letters",
     "year": 2026,
     "arxivUrl": "https://arxiv.org/abs/2603.09237v1",
     "code": "https://github.com/dynamicmobility/moplayground",
     "website": "",
     "thumbnail": "images/papers/mop.gif",
     "thumbnailAlt": "Bruce robot trained via MO-Playground",
-    "abstract": "Multi-objective reinforcement learning (MORL) is a powerful tool to learn Pareto-optimal policy families across conflicting objectives. However, unlike traditional RL algorithms, existing MORL algorithms do not effectively leverage large-scale parallelization to concurrently simulate thousands of environments, resulting in vastly increased computation time. Ultimately, this has limited MORL's application towards complex multi-objective robotics problems. To address these challenges, we present 1) MORLAX, a new GPU-native, fast MORL algorithm, and 2)  MO-Playground, a pip-installable playground of GPU-accelerated multi-objective environments. Together, MORLAX~and  MO-Playground~approximate Pareto sets within minutes, offering 25-270x speed-ups compared to legacy CPU-based approaches whilst achieving superior Pareto front hypervolumes. We demonstrate the versatility of our approach by implementing a custom BRUCE humanoid robot environment using  MO-Playground~and learning Pareto-optimal locomotion policies across 6 realistic objectives for BRUCE, such as smoothness, efficiency and arm swinging."
+    "abstract": "Multi-objective reinforcement learning (MORL) is a powerful tool to learn Pareto-optimal policy families across conflicting objectives. However, unlike traditional RL algorithms, existing MORL algorithms do not effectively leverage large-scale parallelization to concurrently simulate thousands of environments, thus facing vastly increased computation time. Ultimately, this has limited the application of MORL towards complex multi-objective robotics problems. To address these challenges, we present 1) MORLAX, a new GPU-native, fast MORL algorithm, and 2) MO-Playground, a pip-installable playground of GPU-accelerated multi-objective environments. Together, MORLAX and MO-Playground approximate Pareto sets within minutes, offering 26-271x speed-ups compared to legacy CPU-based approaches and up to 19x speed-ups over prior GPU-based approaches whilst learning superior Pareto front hypervolumes. We demonstrate MO-Playground’s versa- tility by implementing a custom BRUCE humanoid robot envi- ronment and learning Pareto-optimal locomotion policies across 6 practical objectives in simulation, such as smoothness, efficiency and arm swinging."
   },
     {
     "id": "navigait",
