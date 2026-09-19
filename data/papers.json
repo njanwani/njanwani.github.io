@@ -1,5 +1,22 @@
 [
-    {
+  {
+    "id": "mocha",
+    "title": "MOCHA: Multi-Objective Co-Design using Hypernetwork Architectures",
+    "authors": [
+      {"name": "Varun Madabushi"},
+      {"name": "Neil Janwani", "highlight": true},
+      {"name": "Maegan Tucker"}
+    ],
+    "venue": "Preprint",
+    "year": 2026,
+    "arxivUrl": "",
+    "code": "",
+    "website": "",
+    "thumbnail": "images/papers/mocha.jpg",
+    "thumbnailAlt": "Design Pareto frontier",
+    "abstract": "In this work, we present MOCHA, the first, to our knowledge, reinforcement learning based approach to computing a family of Pareto-optimal policies across the design space of a robot using a single network. Specifically, MOCHA leverages the hypernetwork architecture to learn a network that produces specialized network parameters optimized for a given objective and parameterized robot design; we term this a multi-objective design hypernetwork (MDH). We demonstrate the capabilities of MDHs to represent a complex family of design-dependent strategies on two distinct robot morphologies, each with six design dimensions and across 2-3 objectives. Moreover, we propose an approach for efficiently producing a Design Pareto set using evolutionary search of the learned policy network, generating  the optimal design-policy combination for each objective prioritization. Lastly, we provide an efficient method for computing generalist robot designs which achieve the best cumulative performance across the entire set of objectives."
+  },
+  {
     "id": "moplayground",
     "title": "MO-Playground: Massively Parallelized Multi-Objective Reinforcement Learning for Robotics",
     "authors": [
@@ -17,7 +34,7 @@
     "thumbnailAlt": "Bruce robot trained via MO-Playground",
     "abstract": "Multi-objective reinforcement learning (MORL) is a powerful tool to learn Pareto-optimal policy families across conflicting objectives. However, unlike traditional RL algorithms, existing MORL algorithms do not effectively leverage large-scale parallelization to concurrently simulate thousands of environments, thus facing vastly increased computation time. Ultimately, this has limited the application of MORL towards complex multi-objective robotics problems. To address these challenges, we present 1) MORLAX, a new GPU-native, fast MORL algorithm, and 2) MO-Playground, a pip-installable playground of GPU-accelerated multi-objective environments. Together, MORLAX and MO-Playground approximate Pareto sets within minutes, offering 26-271x speed-ups compared to legacy CPU-based approaches and up to 19x speed-ups over prior GPU-based approaches whilst learning superior Pareto front hypervolumes. We demonstrate MO-Playground’s versa- tility by implementing a custom BRUCE humanoid robot envi- ronment and learning Pareto-optimal locomotion policies across 6 practical objectives in simulation, such as smoothness, efficiency and arm swinging."
   },
-    {
+  {
     "id": "navigait",
     "title": "NaviGait: Navigating Dynamically Feasible Gait Libraries using Deep Reinforcement Learning",
     "authors": [
