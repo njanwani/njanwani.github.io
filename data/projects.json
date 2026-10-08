@@ -1,5 +1,18 @@
 [
   {
+    "id": "laxmimic",
+    "title": "Relaxing Motion Imitation with Tunable Style-Robustness Tradeoffs",
+    "authors": [
+      {"name": "Neil Janwani"}
+    ],
+    "venue": "Georgia Tech, Dynamic Mobility Lab",
+    "year": "2026",
+    "website": "",
+    "thumbnail": "images/projects/laxmimic.gif",
+    "thumbnailAlt": "Dancing G1 with laxmimic framework",
+    "abstract": "While traditional motion imitation RL focuses on maximizing tracking accuracy, a robot may need to deliberately deviate from the reference to maintain balance on uneven terrain or under external contact perturbations. Here, we present LaxMimic, a framework for varying the robustness-imitation fidelity tradeoff of a frozen nominal policy using a residual policy."
+  },
+  {
     "id": "social_gestures",
     "title": "Socially-Reasonable Humanoid Gestures",
     "authors": [

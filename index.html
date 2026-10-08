@@ -166,6 +166,7 @@
           const titleHref = paper.website || paper.arxivUrl;
           const links = [];
           if (paper.arxivUrl) links.push(`<a href="${paper.arxivUrl}">arXiv</a>`);
+          if (paper.website) links.push(`<a href="${paper.website}">website</a>`);
           if (paper.code) links.push(`<a href="${paper.code}">code</a>`);
           if (paper.abstract && !inlineAbstract) links.push(`<a href="javascript:toggleblock('${paper.id}_abs')">abstract</a>`);
 
